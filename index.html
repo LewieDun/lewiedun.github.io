@@ -3,171 +3,704 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refine - Support</title>
+    <title>Refine - Refine The Process</title>
+    <meta name="description" content="Refine is a fitness and nutrition tracking app with AI-powered features, offline-first architecture, and cross-platform support.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* ── Reset & Base ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #17171a;
+            color: #C3C3C3;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            overflow-x: hidden;
+        }
+        a { color: inherit; text-decoration: none; }
+        h1, h2, h3, h4 { color: #FAFAFA; }
+
+        /* ── Gradient Dividers ── */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #1b6bcd, transparent);
+            border: none;
+            margin: 0;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* ── Scroll Reveal ── */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        header {
-            padding: 60px 0 40px;
-            border-bottom: 1px solid #eee;
-            text-align: center;
+        /* ── Navbar ── */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(23, 23, 26, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease, background 0.3s ease;
         }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
+        .navbar.scrolled {
+            border-image: linear-gradient(90deg, transparent, #1b6bcd, transparent) 1;
         }
-
-        .subtitle {
-            color: #666;
-            font-size: 16px;
+        .nav-brand {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #FAFAFA;
+            letter-spacing: 3px;
         }
-
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
-        .support-card {
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .support-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .support-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .email-link {
-            color: #0066cc;
-            text-decoration: none;
+        .nav-links a {
+            font-size: 0.9rem;
             font-weight: 500;
+            color: #C3C3C3;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
         }
-
-        .email-link:hover {
-            text-decoration: underline;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 8px;
+        .nav-links a:hover { color: #1b6bcd; }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
             cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #FAFAFA;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, #17171a 0%, #0c3569 50%, #17171a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+            position: relative;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-tagline {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            color: #FAFAFA;
+            text-shadow: 0 0 20px rgba(27, 107, 205, 0.6), 0 0 60px rgba(27, 107, 205, 0.3);
+            animation: breathe 4s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+        }
+        .hero-tagline .word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.6s ease forwards;
+        }
+        .hero-tagline .word:nth-child(1) { animation-delay: 0.2s; }
+        .hero-tagline .word:nth-child(2) { animation-delay: 0.5s; }
+        .hero-tagline .word:nth-child(3) { animation-delay: 0.8s; }
+        @keyframes breathe {
+            0%, 100% { text-shadow: 0 0 20px rgba(27, 107, 205, 0.6), 0 0 60px rgba(27, 107, 205, 0.3); }
+            50% { text-shadow: 0 0 40px rgba(27, 107, 205, 0.9), 0 0 100px rgba(27, 107, 205, 0.5); }
+        }
+        @keyframes fadeSlideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-sub {
+            font-size: 1.15rem;
+            color: #C3C3C3;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .hero-mockup {
+            width: 220px;
+            height: 420px;
+            border-radius: 28px;
+            background: linear-gradient(160deg, #222228, #0c3569);
+            border: 2px solid rgba(27, 107, 205, 0.3);
+            margin-bottom: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .hero-mockup::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(250, 250, 250, 0.15);
+        }
+        .hero-mockup::after {
+            content: 'REFINE';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: rgba(250, 250, 250, 0.2);
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(27, 107, 205, 0.3);
+        }
+        .cta-primary {
+            background: #1b6bcd;
+            color: #FAFAFA;
+        }
+        .cta-secondary {
+            background: rgba(250, 250, 250, 0.08);
+            color: #FAFAFA;
+            border: 1px solid rgba(250, 250, 250, 0.15);
+        }
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+            color: #C3C3C3;
+            font-size: 1.5rem;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
         }
 
-        .faq-question {
+        /* ── Section Base ── */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            letter-spacing: 1px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #919191;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        /* ── Features Grid ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .feature-card {
+            background: rgba(34, 34, 40, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(27, 107, 205, 0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(27, 107, 205, 0.15);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #919191;
+            line-height: 1.6;
+        }
+
+        /* ── About ── */
+        .about-section {
+            text-align: center;
+            position: relative;
+        }
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(27, 107, 205, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .about-text {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        .platform-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
             font-weight: 600;
+            background: rgba(27, 107, 205, 0.12);
+            color: #1b6bcd;
+            border: 1px solid rgba(27, 107, 205, 0.2);
+        }
+
+        /* ── Support Cards ── */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .support-card {
+            background: rgba(34, 34, 40, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(27, 107, 205, 0.12);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .support-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(27, 107, 205, 0.15);
+        }
+        .support-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        .support-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .support-card p {
+            font-size: 0.88rem;
+            color: #919191;
+            margin-bottom: 1.2rem;
+        }
+        .support-link {
+            display: inline-block;
+            padding: 0.5rem 1.4rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(27, 107, 205, 0.15);
+            color: #1b6bcd;
+            border: 1px solid rgba(27, 107, 205, 0.25);
+            transition: background 0.3s, color 0.3s;
+        }
+        .support-link:hover {
+            background: #1b6bcd;
+            color: #FAFAFA;
+        }
+
+        /* ── FAQ ── */
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(250, 250, 250, 0.06);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #FAFAFA;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            padding: 1.25rem 0;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
         }
-
+        .faq-question:hover { color: #1b6bcd; }
+        .faq-chevron {
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
         .faq-answer {
-            display: none;
-            margin-top: 15px;
-            color: #666;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .faq-answer-inner {
+            padding: 0 0 1.25rem;
+            color: #919191;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
-        .faq-item.open .faq-answer {
-            display: block;
-        }
-
+        /* ── Footer ── */
         footer {
-            padding: 40px 0;
             text-align: center;
-            color: #999;
-            font-size: 14px;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(250, 250, 250, 0.06);
+        }
+        .footer-brand {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: #FAFAFA;
+            margin-bottom: 0.5rem;
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: #6E6E6E;
+            margin-bottom: 1rem;
+        }
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #404040;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: rgba(23, 23, 26, 0.95);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                padding: 1.5rem 2rem;
+                gap: 1.2rem;
+                transform: translateY(-120%);
+                transition: transform 0.3s ease;
+                border-bottom: 1px solid rgba(27, 107, 205, 0.15);
+            }
+            .nav-links.open { transform: translateY(0); }
+            .hamburger { display: flex; }
+
+            .hero-tagline { font-size: 2.5rem; letter-spacing: 3px; }
+            .hero-mockup { width: 180px; height: 340px; }
+
+            .features-grid { grid-template-columns: 1fr; }
+            .support-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .support-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1025px) {
+            .hero-tagline { font-size: 4.5rem; }
+            .features-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Refine</h1>
-            <p class="subtitle">Support & Help</p>
-        </header>
 
-        <section>
-            <h2>Get Help</h2>
-            <div class="support-card">
-                <h3>📧 Email Support</h3>
-                <p>Have a question or found a bug? Reach out to us.</p>
-                <a href="mailto:support@example.com" class="email-link">support@example.com</a>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <span class="nav-brand">REFINE</span>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-mockup" data-reveal></div>
+        <h1 class="hero-tagline">
+            <span class="word">REFINE</span>
+            <span class="word">THE</span>
+            <span class="word">PROCESS.</span>
+        </h1>
+        <p class="hero-sub" data-reveal>Track workouts, scan nutrition labels with AI, and monitor your body metrics — all in one offline-first app.</p>
+        <div class="cta-buttons" data-reveal>
+            <a href="#" class="cta-btn cta-primary">&#xf179;&ensp;App Store</a>
+            <a href="#" class="cta-btn cta-secondary">&#x25b6;&ensp;Google Play</a>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">&#8964;</div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Features -->
+    <section id="features">
+        <h2 class="section-title" data-reveal>Key Features</h2>
+        <p class="section-subtitle" data-reveal>Everything you need to refine your fitness journey.</p>
+        <div class="features-grid">
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">&#x1f4aa;</div>
+                <h3>Workout Tracking</h3>
+                <p>Create custom templates, log sets, reps, and weight. Track your progress over time with detailed history.</p>
             </div>
-        </section>
-
-        <section>
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item open">
-                <div class="faq-question">
-                    <span>How do I get started?</span>
-                    <span>▼</span>
-                </div>
-                <div class="faq-answer">
-                    Download the app from the App Store and follow the onboarding tutorial. It should take about 2 minutes to set up.
-                </div>
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">&#x1f4f7;</div>
+                <h3>AI Nutrition Scanning</h3>
+                <p>Snap a photo of any nutrition label and let AI extract the data. Scan barcodes for instant food lookups.</p>
             </div>
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">&#x1f4c8;</div>
+                <h3>Body Metrics</h3>
+                <p>Track weight, body measurements, and visualize trends with intuitive charts and progress indicators.</p>
+            </div>
+            <div class="feature-card" data-reveal>
+                <div class="feature-icon">&#x2601;</div>
+                <h3>Offline-First</h3>
+                <p>All your data lives on your device. No internet required for core features — sync when you want to.</p>
+            </div>
+        </div>
+    </section>
 
+    <hr class="divider">
+
+    <!-- About -->
+    <section id="about" class="about-section">
+        <h2 class="section-title" data-reveal>About Refine</h2>
+        <p class="section-subtitle" data-reveal>Built for people who take their fitness seriously.</p>
+        <p class="about-text" data-reveal>
+            Refine is a cross-platform fitness and nutrition tracking app designed to help you build better habits. With customizable workout templates, AI-powered nutrition label scanning, and comprehensive body metric tracking, Refine gives you everything you need in one place. Your data stays on your device with optional cloud sync for backup and cross-device access.
+        </p>
+        <div class="platform-badges" data-reveal>
+            <span class="badge">&#xf179;&ensp;iOS</span>
+            <span class="badge">&#x25b6;&ensp;Android</span>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Support -->
+    <section id="support">
+        <h2 class="section-title" data-reveal>Get Help</h2>
+        <p class="section-subtitle" data-reveal>We're here to help you get the most out of Refine.</p>
+        <div class="support-grid">
+            <div class="support-card" data-reveal>
+                <div class="support-icon">&#x2709;</div>
+                <h3>Email Support</h3>
+                <p>Have a question or need help? Reach out and we'll get back to you.</p>
+                <a href="mailto:support@refineapp.com" class="support-link">Contact Us</a>
+            </div>
+            <div class="support-card" data-reveal>
+                <div class="support-icon">&#x1f41b;</div>
+                <h3>Report a Bug</h3>
+                <p>Found something that doesn't work right? Let us know so we can fix it.</p>
+                <a href="mailto:bugs@refineapp.com" class="support-link">Report Bug</a>
+            </div>
+            <div class="support-card" data-reveal>
+                <div class="support-icon">&#x1f4a1;</div>
+                <h3>Feature Request</h3>
+                <p>Have an idea for a new feature? We'd love to hear your suggestions.</p>
+                <a href="mailto:features@refineapp.com" class="support-link">Request Feature</a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2 class="section-title" data-reveal>Frequently Asked Questions</h2>
+        <p class="section-subtitle" data-reveal>Quick answers to common questions.</p>
+        <div class="faq-list" data-reveal>
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>Is my data secure?</span>
-                    <span>▼</span>
-                </div>
+                <button class="faq-question">
+                    <span>Is Refine free to use?</span>
+                    <span class="faq-chevron">&#x25BC;</span>
+                </button>
                 <div class="faq-answer">
-                    Yes, all data is encrypted and stored securely. We never share your data with third parties.
+                    <div class="faq-answer-inner">Refine is free to download and use. Core features like workout tracking, food logging, and body metrics are available without any subscription. AI-powered features like nutrition label scanning may require an account.</div>
                 </div>
             </div>
-
             <div class="faq-item">
-                <div class="faq-question">
-                    <span>How do I contact support?</span>
-                    <span>▼</span>
-                </div>
+                <button class="faq-question">
+                    <span>Does Refine work offline?</span>
+                    <span class="faq-chevron">&#x25BC;</span>
+                </button>
                 <div class="faq-answer">
-                    You can email us at support@example.com. We typically respond within 24 hours.
+                    <div class="faq-answer-inner">Yes! Refine is built offline-first. All your data is stored locally on your device. You don't need an internet connection to track workouts, log food, or view your progress. Cloud sync is optional for backup and cross-device access.</div>
                 </div>
             </div>
-        </section>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What platforms is Refine available on?</span>
+                    <span class="faq-chevron">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Refine is available on both iOS (15+) and Android (5.0+). It's built with .NET MAUI for a native experience on both platforms.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does AI nutrition scanning work?</span>
+                    <span class="faq-chevron">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Simply point your camera at a nutrition label, and our AI will automatically extract all the nutritional information. You can also scan barcodes to look up foods from our database. The extracted data is automatically added to your food diary.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is my data private and secure?</span>
+                    <span class="faq-chevron">&#x25BC;</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Absolutely. Your data is stored locally on your device using encrypted SQLite databases. If you choose to sync, your data is transmitted securely over HTTPS and stored with industry-standard encryption. We never sell or share your personal data.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>Refine © 2024</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">REFINE</div>
+        <div class="footer-tagline">Refine The Process.</div>
+        <div class="footer-copy">&copy; 2025 Refine. All rights reserved.</div>
+    </footer>
 
     <script>
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.classList.toggle('open');
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Hamburger toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        // Smooth scroll with offset & close mobile menu
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    const offset = navbar.offsetHeight + 16;
+                    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+                }
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // Intersection Observer for scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+        // FAQ accordion (single-open)
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item.active').forEach(open => {
+                    open.classList.remove('active');
+                    open.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Open clicked (if wasn't already open)
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
             });
         });
     </script>
