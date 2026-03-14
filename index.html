@@ -109,15 +109,33 @@
             justify-content: center;
             text-align: center;
             padding: 6rem 2rem 4rem;
-            background: linear-gradient(135deg, #17171a 0%, #0c3569 50%, #17171a 100%);
-            background-size: 400% 400%;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 70%, rgba(12, 53, 105, 0.7) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 30% 50%, rgba(27, 107, 205, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 70% 40%, rgba(27, 107, 205, 0.1) 0%, transparent 60%),
+                #17171a;
+            background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
             animation: gradientShift 12s ease infinite;
             position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%2317171a' d='M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat bottom center;
+            background-size: 100% 100%;
+            pointer-events: none;
+            z-index: 1;
         }
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% { background-position: 50% 50%, 30% 50%, 70% 40%, 0% 0%; }
+            33% { background-position: 60% 60%, 40% 60%, 60% 50%, 0% 0%; }
+            66% { background-position: 40% 55%, 50% 40%, 80% 35%, 0% 0%; }
+            100% { background-position: 50% 50%, 30% 50%, 70% 40%, 0% 0%; }
         }
         .hero-tagline {
             font-size: 3rem;
@@ -243,11 +261,22 @@
             font-size: 1rem;
         }
 
-        /* ── Features Grid ── */
-        .features-grid {
+        /* ── Features — Alternating Rows ── */
+        .feature-row {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+        .feature-row:nth-child(even) .feature-card {
+            order: 2;
+        }
+        .feature-row:nth-child(even) .feature-screenshot {
+            order: 1;
         }
         .feature-card {
             background: rgba(34, 34, 40, 0.6);
@@ -262,10 +291,6 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 40px rgba(27, 107, 205, 0.15);
         }
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
         .feature-card h3 {
             font-size: 1.15rem;
             margin-bottom: 0.5rem;
@@ -275,6 +300,38 @@
             font-size: 0.92rem;
             color: #919191;
             line-height: 1.6;
+        }
+        .feature-screenshot {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            max-height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(160deg, #222228, #0c3569);
+            border: 2px solid rgba(27, 107, 205, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .feature-screenshot::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(250, 250, 250, 0.12);
+        }
+        .feature-screenshot-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: rgba(250, 250, 250, 0.15);
+            text-transform: uppercase;
         }
 
         /* ── About ── */
@@ -349,22 +406,20 @@
         .support-card p {
             font-size: 0.88rem;
             color: #919191;
-            margin-bottom: 1.2rem;
         }
-        .support-link {
-            display: inline-block;
-            padding: 0.5rem 1.4rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: rgba(27, 107, 205, 0.15);
+        .support-contact {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #919191;
+        }
+        .support-contact a {
             color: #1b6bcd;
-            border: 1px solid rgba(27, 107, 205, 0.25);
-            transition: background 0.3s, color 0.3s;
+            font-weight: 600;
+            transition: color 0.3s;
         }
-        .support-link:hover {
-            background: #1b6bcd;
-            color: #FAFAFA;
+        .support-contact a:hover {
+            color: #4a9aef;
         }
 
         /* ── FAQ ── */
@@ -458,18 +513,27 @@
             .hero-tagline { font-size: 2.5rem; letter-spacing: 3px; }
             .hero-mockup { width: 180px; height: 340px; }
 
-            .features-grid { grid-template-columns: 1fr; }
+            .feature-row {
+                grid-template-columns: 1fr;
+            }
+            .feature-row:nth-child(even) .feature-card {
+                order: 2;
+            }
+            .feature-row:nth-child(even) .feature-screenshot {
+                order: 1;
+            }
+            .feature-screenshot {
+                max-height: 300px;
+            }
             .support-grid { grid-template-columns: 1fr; }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
             .support-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (min-width: 1025px) {
             .hero-tagline { font-size: 4.5rem; }
-            .features-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
@@ -507,32 +571,48 @@
         <div class="scroll-indicator" aria-hidden="true">&#8964;</div>
     </section>
 
-    <hr class="divider">
-
     <!-- Features -->
     <section id="features">
         <h2 class="section-title" data-reveal>Key Features</h2>
         <p class="section-subtitle" data-reveal>Everything you need to refine your fitness journey.</p>
-        <div class="features-grid">
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">&#x1f4aa;</div>
+
+        <div class="feature-row" data-reveal>
+            <div class="feature-card">
                 <h3>Workout Tracking</h3>
                 <p>Create custom templates, log sets, reps, and weight. Track your progress over time with detailed history.</p>
             </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">&#x1f4f7;</div>
+            <div class="feature-screenshot">
+                <span class="feature-screenshot-label">Screenshot</span>
+            </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+            <div class="feature-card">
                 <h3>AI Nutrition Scanning</h3>
                 <p>Snap a photo of any nutrition label and let AI extract the data. Scan barcodes for instant food lookups.</p>
             </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">&#x1f4c8;</div>
+            <div class="feature-screenshot">
+                <span class="feature-screenshot-label">Screenshot</span>
+            </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+            <div class="feature-card">
                 <h3>Body Metrics</h3>
                 <p>Track weight, body measurements, and visualize trends with intuitive charts and progress indicators.</p>
             </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">&#x2601;</div>
+            <div class="feature-screenshot">
+                <span class="feature-screenshot-label">Screenshot</span>
+            </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+            <div class="feature-card">
                 <h3>Offline-First</h3>
                 <p>All your data lives on your device. No internet required for core features — sync when you want to.</p>
+            </div>
+            <div class="feature-screenshot">
+                <span class="feature-screenshot-label">Screenshot</span>
             </div>
         </div>
     </section>
@@ -544,7 +624,7 @@
         <h2 class="section-title" data-reveal>About Refine</h2>
         <p class="section-subtitle" data-reveal>Built for people who take their fitness seriously.</p>
         <p class="about-text" data-reveal>
-            Refine is a cross-platform fitness and nutrition tracking app designed to help you build better habits. With customizable workout templates, AI-powered nutrition label scanning, and comprehensive body metric tracking, Refine gives you everything you need in one place. Your data stays on your device with optional cloud sync for backup and cross-device access.
+            Tracking your fitness shouldn't mean juggling five different apps. Refine brings workouts, nutrition, and body metrics into one place so you can focus on what matters — making progress. Everything runs offline on your device, with nothing standing between you and your data.
         </p>
         <div class="platform-badges" data-reveal>
             <span class="badge">&#xf179;&ensp;iOS</span>
@@ -563,21 +643,19 @@
                 <div class="support-icon">&#x2709;</div>
                 <h3>Email Support</h3>
                 <p>Have a question or need help? Reach out and we'll get back to you.</p>
-                <a href="mailto:support@refineapp.com" class="support-link">Contact Us</a>
             </div>
             <div class="support-card" data-reveal>
                 <div class="support-icon">&#x1f41b;</div>
                 <h3>Report a Bug</h3>
                 <p>Found something that doesn't work right? Let us know so we can fix it.</p>
-                <a href="mailto:bugs@refineapp.com" class="support-link">Report Bug</a>
             </div>
             <div class="support-card" data-reveal>
                 <div class="support-icon">&#x1f4a1;</div>
                 <h3>Feature Request</h3>
                 <p>Have an idea for a new feature? We'd love to hear your suggestions.</p>
-                <a href="mailto:features@refineapp.com" class="support-link">Request Feature</a>
             </div>
         </div>
+        <p class="support-contact" data-reveal>Contact us at <a href="mailto:support@refineapp.com">support@refineapp.com</a></p>
     </section>
 
     <hr class="divider">
@@ -593,7 +671,7 @@
                     <span class="faq-chevron">&#x25BC;</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Refine is free to download and use. Core features like workout tracking, food logging, and body metrics are available without any subscription. AI-powered features like nutrition label scanning may require an account.</div>
+                    <div class="faq-answer-inner">Yes! Just create an account and you're good to go. There are no paid features — everything is free.</div>
                 </div>
             </div>
             <div class="faq-item">
@@ -611,16 +689,16 @@
                     <span class="faq-chevron">&#x25BC;</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Refine is available on both iOS (15+) and Android (5.0+). It's built with .NET MAUI for a native experience on both platforms.</div>
+                    <div class="faq-answer-inner">Refine is available on both iOS and Android.</div>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">
-                    <span>How does AI nutrition scanning work?</span>
+                    <span>Can I track my calories?</span>
                     <span class="faq-chevron">&#x25BC;</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Simply point your camera at a nutrition label, and our AI will automatically extract all the nutritional information. You can also scan barcodes to look up foods from our database. The extracted data is automatically added to your food diary.</div>
+                    <div class="faq-answer-inner">Absolutely. Refine includes a full food diary where you can log meals throughout the day and track your calories and macros. You can add foods manually, scan nutrition labels with AI to extract the data instantly, or use barcode lookup to find items from our database.</div>
                 </div>
             </div>
             <div class="faq-item">
@@ -629,7 +707,7 @@
                     <span class="faq-chevron">&#x25BC;</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Absolutely. Your data is stored locally on your device using encrypted SQLite databases. If you choose to sync, your data is transmitted securely over HTTPS and stored with industry-standard encryption. We never sell or share your personal data.</div>
+                    <div class="faq-answer-inner">Yes. Your data is stored locally on your device and is never sold or shared.</div>
                 </div>
             </div>
         </div>
