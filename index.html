@@ -259,8 +259,9 @@
         .feature-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
+            justify-items: center;
             margin-bottom: 3rem;
         }
         .feature-row:last-child {
@@ -297,28 +298,29 @@
         }
         .feature-screenshot {
             width: 100%;
-            aspect-ratio: 9 / 16;
-            max-height: 600px;
-            border-radius: 20px;
+            max-width: 220px;
+            height: 420px;
+            border-radius: 28px;
             background: linear-gradient(160deg, #222228, #0c3569);
-            border: 2px solid rgba(27, 107, 205, 0.2);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(27, 107, 205, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            margin: 0 auto;
         }
         .feature-screenshot::before {
             content: '';
             position: absolute;
-            top: 8px;
+            top: 12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
-            height: 4px;
-            border-radius: 2px;
-            background: rgba(250, 250, 250, 0.12);
+            width: 60px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(250, 250, 250, 0.15);
             z-index: 10;
         }
 
@@ -523,7 +525,7 @@
                 order: 1;
             }
             .feature-screenshot {
-                max-height: 450px;
+                max-height: 300px;
             }
             .support-grid { grid-template-columns: 1fr; }
         }
@@ -657,7 +659,7 @@
                 <p>Have an idea for a new feature? We'd love to hear your suggestions.</p>
             </div>
         </div>
-        <p class="support-contact" data-reveal>Contact us at <a href="mailto:support@refineapp.com">support@refineapp.com</a></p>
+        <p class="support-contact" data-reveal>Contact us at <a href="/cdn-cgi/l/email-protection#9feceaefeff0edebdfedfaf9f6f1fafeefefb1fcf0f2"><span class="__cf_email__" data-cfemail="6615131616091412261403000f08030716164805090b">[email&#160;protected]</span></a></p>
     </section>
 
     <hr class="divider">
@@ -722,7 +724,7 @@
         <div class="footer-copy">&copy; 2025 Refine. All rights reserved.</div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -776,13 +778,4 @@
                     open.querySelector('.faq-answer').style.maxHeight = null;
                 });
 
-                // Open clicked (if wasn't already open)
-                if (!isActive) {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                // Open clicked (if wasn't
