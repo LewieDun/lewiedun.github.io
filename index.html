@@ -178,6 +178,10 @@
             margin-bottom: 2.5rem;
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .hero-mockup::before {
             content: '';
@@ -189,17 +193,7 @@
             height: 6px;
             border-radius: 3px;
             background: rgba(250, 250, 250, 0.15);
-        }
-        .hero-mockup::after {
-            content: 'REFINE';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            color: rgba(250, 250, 250, 0.2);
+            z-index: 10;
         }
         .cta-buttons {
             display: flex;
@@ -325,14 +319,20 @@
             height: 4px;
             border-radius: 2px;
             background: rgba(250, 250, 250, 0.12);
+            z-index: 10;
         }
-        .feature-screenshot-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: rgba(250, 250, 250, 0.15);
-            text-transform: uppercase;
+
+        /* Image fills inside phone mockup frames */
+        .mockup-img, .feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 26px;
+            display: block;
         }
+        /* Suppress placeholder text on hero when real image is present */
+        .hero-mockup::after { content: none; }
 
         /* ── About ── */
         .about-section {
@@ -557,7 +557,9 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
-        <div class="hero-mockup" data-reveal></div>
+        <div class="hero-mockup" data-reveal>
+            <img src="01-hero-1125x2436.png" alt="Refine app home screen" class="mockup-img">
+        </div>
         <h1 class="hero-tagline">
             <span class="word">REFINE</span>
             <span class="word">THE</span>
@@ -582,7 +584,7 @@
                 <p>Create custom templates, log sets, reps, and weight. Track your progress over time with detailed history.</p>
             </div>
             <div class="feature-screenshot">
-                <span class="feature-screenshot-label">Screenshot</span>
+                <img src="02-workout-1125x2436.png" alt="Workout tracking screen" class="feature-img">
             </div>
         </div>
 
@@ -592,7 +594,7 @@
                 <p>Snap a photo of any nutrition label and let AI extract the data. Scan barcodes for instant food lookups.</p>
             </div>
             <div class="feature-screenshot">
-                <span class="feature-screenshot-label">Screenshot</span>
+                <img src="05-nutrition-1125x2436.png" alt="AI nutrition scanning screen" class="feature-img">
             </div>
         </div>
 
@@ -602,7 +604,7 @@
                 <p>Track weight, body measurements, and visualize trends with intuitive charts and progress indicators.</p>
             </div>
             <div class="feature-screenshot">
-                <span class="feature-screenshot-label">Screenshot</span>
+                <img src="03-stats-1125x2436.png" alt="Body metrics screen" class="feature-img">
             </div>
         </div>
 
@@ -612,7 +614,7 @@
                 <p>All your data lives on your device. No internet required for core features — sync when you want to.</p>
             </div>
             <div class="feature-screenshot">
-                <span class="feature-screenshot-label">Screenshot</span>
+                <img src="7-offline-1125x2436.png" alt="Offline mode screen" class="feature-img">
             </div>
         </div>
     </section>
