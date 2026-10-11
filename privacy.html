@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B6BCD"/><text x="50" y="66" font-family="sans-serif" font-size="46" font-weight="600" fill="#fff" text-anchor="middle">R</text></svg></template>
+<x-dc>
+<helmet>
+<title>Privacy Policy – Refine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&amp;display=block" rel="stylesheet">
+<script>try{if(localStorage.getItem('refine-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<style>
+html{--bg:#17171A;--surface:#222228;--surface-2:#2B2B33;--line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.22);--text:#F2F2F2;--muted:#ABABB5;--accent:#3DB5F5;--lav:#9880E5;--chip-blue:rgba(61,181,245,.12);--chip-lav:rgba(152,128,229,.16);--nav:rgba(23,23,26,.8);color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:88px}
+html[data-theme="light"]{--bg:#F2F2F2;--surface:#FFFFFF;--surface-2:#E8E8ED;--line:rgba(23,23,26,.1);--line-strong:rgba(23,23,26,.25);--text:#17171A;--muted:#55555F;--accent:#1B6BCD;--lav:#5A3CB8;--chip-blue:#DCE8F8;--chip-lav:#DFD8F7;--nav:rgba(242,242,242,.82);color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html,body,#dc-root,#dc-root > .sc-host{height:auto;min-height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Aptos,"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<a href="#main" style="position:fixed;left:16px;top:-80px;z-index:100;padding:12px 18px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;text-decoration:none" style-focus="top:12px">Skip to content</a>
+<header style="position:sticky;top:0;z-index:50;background:var(--nav);-webkit-backdrop-filter:saturate(1.5) blur(18px);backdrop-filter:saturate(1.5) blur(18px);border-bottom:1px solid var(--line)">
+  <nav aria-label="Main" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,40px);height:64px;display:flex;align-items:center;gap:28px">
+    <a href="index.html" aria-label="Refine home" style="display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none">
+      <span style="font-size:21px;font-weight:600;letter-spacing:-0.02em">Refine</span>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;gap:2px">
+        <li><a href="index.html#features" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Features</a></li>
+        <li><a href="index.html#privacy" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Privacy</a></li>
+        <li><a href="index.html#faq" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">FAQ</a></li>
+        <li><a href="support.html" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Support</a></li>
+      </ul>
+    </sc-if>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeLabel }}" title="{{ themeLabel }}" style="width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0" style-hover="background:var(--surface)"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:21px">{{ themeIcon }}</span></button>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:15px;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF">Get the app</a>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="mobile-menu" aria-label="{{ menuLabel }}" style="width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">{{ menuIcon }}</span></button>
+      </sc-if>
+    </div>
+  </nav>
+  <sc-if value="{{ menuOpenNarrow }}" hint-placeholder-val="{{ false }}">
+    <div id="mobile-menu" style="border-top:1px solid var(--line);padding:8px clamp(20px,5vw,40px) 20px;display:flex;flex-direction:column">
+      <a href="index.html#features" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">Features</a>
+      <a href="index.html#privacy" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">Privacy</a>
+      <a href="index.html#faq" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">FAQ</a>
+      <a href="support.html" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px">Support</a>
+      <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="margin-top:12px;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:17px;text-decoration:none">Download on the App Store</a>
+    </div>
+  </sc-if>
+</header>
+
+<main id="main" data-screen-label="Privacy Policy" style="max-width:1160px;margin:0 auto;padding:clamp(40px,8vw,88px) clamp(20px,5vw,40px) clamp(64px,10vw,120px)">
+  <div style="display:flex;flex-direction:column;gap:16px;max-width:760px;margin-bottom:clamp(36px,6vw,64px)">
+    <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">Legal</p>
+    <h1 style="font-size:clamp(40px,6.5vw,68px);line-height:1.03;letter-spacing:-0.035em;font-weight:600">Privacy Policy</h1>
+    <p style="color:var(--muted);font-size:16px">Last updated: October 2026</p>
+    <p style="font-size:clamp(18px,2.2vw,20px);line-height:1.6;text-wrap:pretty;margin-top:8px">Refine is a fitness and nutrition tracking app built by an independent developer. This policy explains what data Refine collects, where it's stored, who it's shared with, and how you can delete it.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(28px,6vw,72px)">
+    <nav aria-labelledby="toc-title" style="flex:1 1 220px;max-width:100%;position:{{ tocPos }};top:96px;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:20px 12px 12px">
+      <h2 id="toc-title" style="padding:0 12px 8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">On this page</h2>
+      <ol role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px">
+        <li><a href="#data-we-collect" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border-radius:14px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.3" style-hover="background:var(--surface-2);color:var(--text)"><span style="color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px">01</span>Data we collect</a></li>
+        <li><a href="#data-on-your-device" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border-radius:14px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.3" style-hover="background:var(--surface-2);color:var(--text)"><span style="color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px">02</span>Data stored on your device</a></li>
+        <li><a href="#sync" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border-radius:14px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.3" style-hover="background:var(--surface-2);color:var(--text)"><span style="color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px">03</span>Sync</a></li>
+        <li><a href="#third-party-services" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border-radius:14px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.3" style-hover="background:var(--surface-2);color:var(--text)"><span style="color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px">04</span>Third-party services</a></li>
+        <li><a href="#deleting-your-account" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border-radius:14px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.3" style-hover="background:var(--surface-2);color:var(--text)"><span style="color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px">05</span>Deleting your account</a></li>
+        <li><a href="#contact" style="display:flex;align-items:center;gap:12px;min-height:44px;padding:8px 12px;border-radius:14px;color:var(--text);text-decoration:none;font-size:15px;line-height:1.3" style-hover="background:var(--surface-2);color:var(--text)"><span style="color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px">06</span>Contact</a></li>
+      </ol>
+    </nav>
+
+    <article style="flex:3 1 520px;min-width:0;max-width:720px;display:flex;flex-direction:column;gap:clamp(44px,6vw,64px)">
+      <section aria-labelledby="h-short" style="background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-short" style="font-size:22px;font-weight:600;letter-spacing:-0.01em">In short:</h2>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;flex-direction:column;gap:4px"><dt style="font-weight:600;color:var(--accent)">What we collect</dt><dd style="margin:0;font-size:17px;line-height:1.6;color:var(--muted)">Your account details, your height and weight, the workouts you log, your food entries, and your messages to Atlas if you use it.</dd></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><dt style="font-weight:600;color:var(--accent)">How we use it</dt><dd style="margin:0;font-size:17px;line-height:1.6;color:var(--muted)">To personalise your plan, show your trends and run Atlas. It is never sold and never used for advertising.</dd></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><dt style="font-weight:600;color:var(--accent)">Your controls</dt><dd style="margin:0;font-size:17px;line-height:1.6;color:var(--muted)">Atlas is optional and never changes your data without your confirmation. You can delete your account and its data from Settings at any time.</dd></div>
+        </dl>
+      </section>
+      <section id="data-we-collect" aria-labelledby="h-collect" style="display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-collect" style="display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,3.2vw,32px);line-height:1.15;letter-spacing:-0.02em;font-weight:600"><span style="font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0">01</span>Data we collect</h2>
+        <ul style="margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:12px">
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Account details:</strong> the email address and password you sign up with. Email addresses aren't verified, so you don't have to use your real one.</li>
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Profile:</strong> details you enter during setup, such as height, weight and goals.</li>
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Your logs:</strong> workouts, workout templates, food diary entries, meals, supplements, and weight and body measurements.</li>
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Atlas messages:</strong> only if you choose to use the AI assistant. See <a href="#third-party-services">Third-party services</a> below.</li>
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Crash reports:</strong> anonymous technical data that helps us fix bugs.</li>
+        </ul>
+      </section>
+      <section id="data-on-your-device" aria-labelledby="h-device" style="display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-device" style="display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,3.2vw,32px);line-height:1.15;letter-spacing:-0.02em;font-weight:600"><span style="font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0">02</span>Data stored on your device</h2>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Refine is built to work offline. Everything you log is stored in a local database on your phone, and the app works fully without an internet connection.</p>
+        <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.01em;margin-top:8px">Camera and scanning</h3>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Refine uses your camera to scan barcodes and nutrition labels. Barcode images are processed on your device and never uploaded. When you scan a nutrition label, the photo is sent to our server and our AI provider to read the nutrition values, then discarded. It is not stored.</p>
+      </section>
+      <section id="sync" aria-labelledby="h-sync" style="display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-sync" style="display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,3.2vw,32px);line-height:1.15;letter-spacing:-0.02em;font-weight:600"><span style="font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0">03</span>Sync</h2>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Your data is copied to your Refine account when you create the account, when you log in, and whenever you sync from Settings. Sync lets you restore your data on a new phone or use Refine on more than one device.</p>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Synced data is stored on secure cloud infrastructure (Microsoft Azure, UK region). It is encrypted in transit and at rest. Passwords are hashed and never stored in plain text.</p>
+      </section>
+      <section id="third-party-services" aria-labelledby="h-third" style="display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-third" style="display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,3.2vw,32px);line-height:1.15;letter-spacing:-0.02em;font-weight:600"><span style="font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0">04</span>Third-party services</h2>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">We do not sell your data, and we do not work with advertisers or data brokers. We share data only with the service providers that run Refine:</p>
+        <ul style="margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:12px">
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Anthropic</strong> (AI provider) processes Atlas messages and nutrition label photos.</li>
+          <li style="font-size:18px;line-height:1.65;text-wrap:pretty"><strong style="font-weight:600">Sentry</strong> (error tracking) receives anonymous crash reports. These contain only technical data. They never include personal information or the content of your Atlas conversations.</li>
+        </ul>
+        <h3 style="font-size:19px;font-weight:600;letter-spacing:-0.01em;margin-top:8px">Atlas, the AI assistant</h3>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Atlas is optional. When you use it, your messages are sent through our server to Anthropic to generate a reply. To answer questions about your training and nutrition, Atlas reads your data on your device and sends only summaries, such as daily totals, trends and personal bests. It never sends your individual food diary entries.</p>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Conversations are not saved, either on your device or on our server. We keep only usage records (time, message count and cost) to enforce limits. Atlas can suggest food diary entries, but nothing is written until you confirm it.</p>
+      </section>
+      <section id="deleting-your-account" aria-labelledby="h-delete" style="display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-delete" style="display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,3.2vw,32px);line-height:1.15;letter-spacing:-0.02em;font-weight:600"><span style="font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0">05</span>Deleting your account</h2>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">You can delete your account and all of its data at any time from Settings in the app. This removes your data from our servers and from your device.</p>
+      </section>
+      <section id="contact" aria-labelledby="h-contact" style="display:flex;flex-direction:column;gap:18px">
+        <h2 id="h-contact" style="display:flex;align-items:baseline;gap:14px;font-size:clamp(24px,3.2vw,32px);line-height:1.15;letter-spacing:-0.02em;font-weight:600"><span style="font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0">06</span>Contact</h2>
+        <p style="font-size:18px;line-height:1.7;text-wrap:pretty">Questions about this policy or your data? Email <a href="{{ mailto }}">{{ supportEmail }}</a>.</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer style="border-top:1px solid var(--line)">
+  <div style="max-width:1160px;margin:0 auto;padding:40px clamp(20px,5vw,40px) 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:20px;font-weight:600;letter-spacing:-0.02em">Refine</span>
+      <span style="font-size:14px;color:var(--muted)">Training and nutrition, in one app.</span>
+    </div>
+    <nav aria-label="Footer">
+      <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 24px">
+        <li><a href="privacy.html" aria-current="page" style="display:inline-flex;align-items:center;min-height:44px;color:var(--accent);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Privacy Policy</a></li>
+        <li><a href="support.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--text);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Support / Contact</a></li>
+      </ul>
+    </nav>
+    <p style="font-size:14px;color:var(--muted)">© 2026 Refine</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;appStoreUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://apps.apple.com/gb/app/refined/id6746036339&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;supportEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;support@refinemobile.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: window.innerWidth < 880, menuOpen: false, theme: 'dark' };
+  componentDidMount() {
+    let t = 'dark';
+    try { t = localStorage.getItem('refine-theme') === 'light' ? 'light' : 'dark'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', t);
+    this.mq = window.matchMedia('(max-width: 879px)');
+    this.onMq = () => this.setState(s => ({ narrow: this.mq.matches, menuOpen: this.mq.matches && s.menuOpen }));
+    this.mq.addEventListener('change', this.onMq);
+    this.setState({ theme: t, narrow: this.mq.matches });
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener('change', this.onMq); }
+  toggleTheme = () => {
+    const t = this.state.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('refine-theme', t); } catch (e) {}
+    this.setState({ theme: t });
+  };
+  renderVals() {
+    const p = this.props, s = this.state, light = s.theme === 'light';
+    const email = p.supportEmail ?? 'support@refinemobile.com';
+    return {
+      appStoreUrl: p.appStoreUrl ?? 'https://apps.apple.com/gb/app/refined/id6746036339',
+      supportEmail: email,
+      mailto: 'mailto:' + email,
+      wide: !s.narrow,
+      narrow: s.narrow,
+      tocPos: s.narrow ? 'static' : 'sticky',
+      menuOpen: s.menuOpen,
+      menuOpenNarrow: s.narrow && s.menuOpen,
+      menuIcon: s.menuOpen ? 'close' : 'menu',
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      themeIcon: light ? 'dark_mode' : 'light_mode',
+      themeLabel: light ? 'Switch to dark theme' : 'Switch to light theme',
+      toggleTheme: this.toggleTheme
+    };
+  }
+}
+</script>
+</body>
+</html>

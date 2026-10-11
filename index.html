@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B6BCD"/><text x="50" y="66" font-family="sans-serif" font-size="46" font-weight="600" fill="#fff" text-anchor="middle">R</text></svg></template>
+<x-dc>
+<helmet>
+<title>Refine – Your training and nutrition, in one app</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Refine is an iPhone app for tracking workouts, food and body weight in one place. Free on the App Store.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&amp;display=block" rel="stylesheet">
+<script>try{if(localStorage.getItem('refine-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<style>
+html{--bg:#17171A;--surface:#222228;--surface-2:#2B2B33;--line:rgba(255,255,255,.09);--text:#F2F2F2;--muted:#ABABB5;--accent:#3DB5F5;--lav:#9880E5;--chip-blue:rgba(61,181,245,.12);--chip-lav:rgba(152,128,229,.16);--phone:#0B0B0D;--nav:rgba(23,23,26,.8);color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:80px}
+html[data-theme="light"]{--bg:#F2F2F2;--surface:#FFFFFF;--surface-2:#E8E8ED;--line:rgba(23,23,26,.1);--text:#17171A;--muted:#55555F;--accent:#1B6BCD;--lav:#5A3CB8;--chip-blue:#DCE8F8;--chip-lav:#DFD8F7;--phone:#17171A;--nav:rgba(242,242,242,.82);color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html,body,#dc-root,#dc-root > .sc-host{height:auto;min-height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Aptos,"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,figure,dl,dd{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<a href="#main" style="position:fixed;left:16px;top:-80px;z-index:100;padding:12px 18px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;text-decoration:none" style-focus="top:12px">Skip to content</a>
+<header style="position:sticky;top:0;z-index:50;background:var(--nav);-webkit-backdrop-filter:saturate(1.5) blur(18px);backdrop-filter:saturate(1.5) blur(18px);border-bottom:1px solid var(--line)">
+  <nav aria-label="Main" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,40px);height:64px;display:flex;align-items:center;gap:28px">
+    <a href="#top" aria-label="Refine, back to top" style="display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none">
+      <span style="font-size:21px;font-weight:600;letter-spacing:-0.02em">Refine</span>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;gap:2px">
+        <li><a href="#features" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Features</a></li>
+        <li><a href="#privacy" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Privacy</a></li>
+        <li><a href="#faq" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">FAQ</a></li>
+        <li><a href="support.html" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Support</a></li>
+      </ul>
+    </sc-if>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeLabel }}" title="{{ themeLabel }}" style="width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0" style-hover="background:var(--surface)"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:21px">{{ themeIcon }}</span></button>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:15px;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF">Get the app</a>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="mobile-menu" aria-label="{{ menuLabel }}" style="width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">{{ menuIcon }}</span></button>
+      </sc-if>
+    </div>
+  </nav>
+  <sc-if value="{{ menuOpenNarrow }}" hint-placeholder-val="{{ false }}">
+    <div id="mobile-menu" style="border-top:1px solid var(--line);padding:8px clamp(20px,5vw,40px) 20px;display:flex;flex-direction:column">
+      <a href="#features" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">Features</a>
+      <a href="#privacy" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">Privacy</a>
+      <a href="#faq" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">FAQ</a>
+      <a href="support.html" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px">Support</a>
+      <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="margin-top:12px;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:17px;text-decoration:none">Download on the App Store</a>
+    </div>
+  </sc-if>
+</header>
+
+<main id="main">
+  <section id="top" data-screen-label="Hero" aria-labelledby="hero-title" style="max-width:1160px;margin:0 auto;padding:clamp(40px,8vw,96px) clamp(20px,5vw,40px) clamp(72px,10vw,120px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(56px,6vw,80px)">
+    <div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:24px">
+      <h1 id="hero-title" style="font-size:clamp(42px,7.4vw,78px);line-height:1.02;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Your training and nutrition, <span style="font-weight:300;color:var(--accent)">in one app.</span></h1>
+      <p style="font-size:clamp(18px,2.2vw,21px);line-height:1.5;color:var(--muted);max-width:34ch;text-wrap:pretty">Track your workouts, food and weight together, so you can see how they fit without switching apps.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:17px;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF">Download on the App Store<span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">arrow_outward</span></a>
+        <a href="#features" style="display:inline-flex;align-items:center;min-height:54px;padding:0 26px;border-radius:999px;border:1px solid var(--line);color:var(--text);font-weight:600;font-size:17px;text-decoration:none" style-hover="background:var(--surface);color:var(--text)">See features</a>
+      </div>
+      <p style="font-size:15px;color:var(--muted)">Free on iPhone. Android is planned.</p>
+    </div>
+    <div style="flex:1 1 320px;position:relative;display:flex;justify-content:center">
+      <div aria-hidden="true" style="position:absolute;inset:-6% -10%;background:radial-gradient(closest-side,rgba(27,107,205,.30),rgba(107,75,205,.10) 60%,transparent);pointer-events:none"></div>
+      <div style="position:relative;width:min(460px,100%);aspect-ratio:1/1.25">
+        <div style="position:absolute;top:0;left:0;margin-top:0%;width:70%;aspect-ratio:906/1000;z-index:1;border-radius:clamp(20px,4vw,30px);overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px rgba(23,23,26,.08),0 30px 60px -24px rgba(0,0,0,.55);padding:clamp(8px,1.8vw,14px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:clamp(12px,2.4vw,18px)"><img src="assets/screens/food-diary.jpeg" alt="Refine food diary showing the daily calorie goal, food eaten and calories remaining, with breakfast entries and their calories." style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-28.698%;display:block"></div>
+        </div>
+        <div style="position:absolute;top:0;right:0;margin-top:34%;width:56%;aspect-ratio:874/830;z-index:2;border-radius:clamp(20px,4vw,30px);overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px rgba(23,23,26,.08),0 30px 60px -24px rgba(0,0,0,.55);padding:clamp(8px,1.8vw,14px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:clamp(12px,2.4vw,18px)"><img src="assets/screens/progression.jpeg" alt="Progression chart for an exercise showing current weight and a trend line over time." style="position:absolute;top:0;left:-4.119%;width:108.238%;max-width:none;height:auto;margin-top:-78.947%;display:block"></div>
+        </div>
+        <div style="position:absolute;top:0;left:10%;margin-top:80%;width:58%;aspect-ratio:866/620;z-index:3;border-radius:clamp(20px,4vw,30px);overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px rgba(23,23,26,.08),0 30px 60px -24px rgba(0,0,0,.55);padding:clamp(8px,1.8vw,14px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:clamp(12px,2.4vw,18px)"><img src="assets/screens/workout-history.jpeg" alt="Workout history card for a leg session, showing total weight lifted, duration and the sets for each exercise." style="position:absolute;top:0;left:-4.619%;width:109.238%;max-width:none;height:auto;margin-top:-56.582%;display:block"></div>
+        </div>
+      
+    </div>
+  </section>
+
+  <section data-screen-label="Problem and fix" aria-labelledby="story-title" style="max-width:1160px;margin:0 auto;padding:clamp(56px,9vw,112px) clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,80px)">
+    <div style="flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">Why it exists</p>
+      <h2 id="story-title" style="font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Two apps, merged into one.</h2>
+      <p style="font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:52ch;text-wrap:pretty">Refine started with a common problem: workouts logged in one app, food in another, and constant switching between the two to see the full picture.</p>
+    </div>
+    <div style="flex:1 1 380px;min-width:0;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px">
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <span style="width:44px;height:44px;border-radius:14px;background:var(--surface-2);color:var(--muted);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">fitness_center</span></span>
+        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Workout app</span><span style="font-size:14px;color:var(--muted)">Sets, reps, templates</span></span>
+      </div>
+      <span aria-hidden="true" style="width:32px;height:32px;border-radius:999px;border:1px solid var(--line);color:var(--muted);display:grid;place-items:center"><span class="material-symbols-rounded" style="font-size:18px">add</span></span>
+      <div style="background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <span style="width:44px;height:44px;border-radius:14px;background:var(--surface-2);color:var(--muted);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">restaurant</span></span>
+        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Food app</span><span style="font-size:14px;color:var(--muted)">Meals, macros, barcodes</span></span>
+      </div>
+      <span aria-hidden="true" style="grid-column:1 / -1;justify-self:center;color:var(--muted);display:grid;place-items:center;height:36px"><span class="material-symbols-rounded" style="font-size:24px">arrow_downward</span></span>
+      <div style="grid-column:1 / -1;background:var(--surface);border:1.5px solid #1B6BCD;border-radius:28px;padding:24px;display:flex;align-items:center;gap:18px;box-shadow:0 20px 60px -30px rgba(27,107,205,.6)">
+        <span style="flex:none;width:52px;height:52px;border-radius:16px;background:#1B6BCD;color:#FFFFFF;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:28px;font-variation-settings:'FILL' 1">check</span></span>
+        <span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;font-size:20px;letter-spacing:-0.01em">Refine</span><span style="font-size:15px;color:var(--muted)">Workouts, food and body weight in one place</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" data-screen-label="Features" aria-labelledby="features-title" style="max-width:1160px;margin:0 auto;padding:clamp(56px,9vw,112px) clamp(20px,5vw,40px);display:flex;flex-direction:column;gap:clamp(36px,5vw,56px)">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:640px">
+      <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">Features</p>
+      <h2 id="features-title" style="font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">What Refine does.</h2>
+      <p style="font-size:clamp(17px,2vw,19px);color:var(--muted);text-wrap:pretty">Three areas that used to live in separate apps, plus optional sync.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;align-items:start">
+      <article aria-labelledby="f-workouts" style="background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="width:52px;height:52px;border-radius:16px;background:var(--chip-blue);color:var(--accent);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:28px">fitness_center</span></span>
+          <h3 id="f-workouts" style="font-size:24px;font-weight:600;letter-spacing:-0.02em">Workouts</h3>
+        </div>
+        <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px">
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--accent);flex:none;margin-top:1px">edit_note</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Templates and live logging</span><span style="font-size:15px;color:var(--muted)">Build workout templates, then log each session as you train.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--accent);flex:none;margin-top:1px">menu_book</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Exercise library</span><span style="font-size:15px;color:var(--muted)">Browse A–Z, by muscle or by equipment.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--accent);flex:none;margin-top:1px">show_chart</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Progression charts</span><span style="font-size:15px;color:var(--muted)">See how each exercise is moving over time.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--accent);flex:none;margin-top:1px">history</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Workout history</span><span style="font-size:15px;color:var(--muted)">Every session you've logged, in one place.</span></span></li>
+        </ul>
+      </article>
+      <article aria-labelledby="f-nutrition" style="background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="width:52px;height:52px;border-radius:16px;background:var(--chip-lav);color:var(--lav);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:28px">restaurant</span></span>
+          <h3 id="f-nutrition" style="font-size:24px;font-weight:600;letter-spacing:-0.02em">Nutrition</h3>
+        </div>
+        <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px">
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--lav);flex:none;margin-top:1px">restaurant_menu</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Food diary</span><span style="font-size:15px;color:var(--muted)">Split by meal, with macros and micronutrients.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--lav);flex:none;margin-top:1px">barcode_scanner</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Barcode scanning</span><span style="font-size:15px;color:var(--muted)">Scan a packet to add it to your diary.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--lav);flex:none;margin-top:1px">document_scanner</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Label scanning</span><span style="font-size:15px;color:var(--muted)">Point the camera at a nutrition label and AI reads the values for you.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--lav);flex:none;margin-top:1px">bookmark</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Saved meals</span><span style="font-size:15px;color:var(--muted)">Log the meals you eat often in one go.</span></span></li>
+          <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--lav);flex:none;margin-top:1px">pill</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Supplements</span><span style="font-size:15px;color:var(--muted)">Keep track of what you take each day.</span></span></li>
+        </ul>
+      </article>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <article aria-labelledby="f-body" style="background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:28px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <span style="width:52px;height:52px;border-radius:16px;background:var(--chip-blue);color:var(--accent);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:28px">monitor_weight</span></span>
+            <h3 id="f-body" style="font-size:24px;font-weight:600;letter-spacing:-0.02em">Body</h3>
+          </div>
+          <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px">
+            <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--accent);flex:none;margin-top:1px">straighten</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Weight and measurements</span><span style="font-size:15px;color:var(--muted)">Log your weight and body measurements.</span></span></li>
+            <li style="display:flex;gap:14px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:var(--accent);flex:none;margin-top:1px">trending_down</span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">Trend charts</span><span style="font-size:15px;color:var(--muted)">See which way things are heading, not just today's number.</span></span></li>
+          </ul>
+        </article>
+        <article aria-labelledby="f-sync" style="background:var(--surface);border:1px dashed var(--line);border-radius:28px;padding:clamp(24px,3vw,32px);display:flex;gap:16px;align-items:flex-start">
+          <span style="flex:none;width:44px;height:44px;border-radius:14px;background:var(--surface-2);color:var(--text);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">sync</span></span>
+          <span style="display:flex;flex-direction:column;gap:4px">
+            <h3 id="f-sync" style="font-size:18px;font-weight:600">Plus: optional sync</h3>
+            <span style="font-size:15px;color:var(--muted)">Use Refine across your devices. Sync stays off unless you turn it on.</span>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens" data-screen-label="Screenshots" aria-labelledby="screens-title" style="padding:clamp(56px,9vw,112px) 0;display:flex;flex-direction:column;gap:clamp(28px,4vw,44px)">
+    <div style="max-width:1160px;width:100%;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">Screenshots</p>
+        <h2 id="screens-title" style="font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600">A look inside.</h2>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button type="button" onClick="{{ prev }}" aria-label="Previous screenshot" style="width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0" style-hover="background:var(--surface-2)"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">chevron_left</span></button>
+        <button type="button" onClick="{{ next }}" aria-label="Next screenshot" style="width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0" style-hover="background:var(--surface-2)"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">chevron_right</span></button>
+      </div>
+    </div>
+    <div ref="{{ trackRef }}" role="region" aria-label="App screenshots, scroll sideways" tabindex="0" style="display:flex;gap:clamp(16px,3vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px max(clamp(20px,5vw,40px),calc((100vw - 1080px) / 2)) 16px;scroll-padding:0 max(clamp(20px,5vw,40px),calc((100vw - 1080px) / 2))">
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/workout-history.jpeg" alt="Workout history listing recent sessions with total weight lifted, records and duration, and the sets for each exercise." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-51.876%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Workouts</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Every session saved, with weight lifted, duration and records.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/progression.jpeg" alt="Progression chart for chest supported row showing estimated one-rep max, PR weight and a weight trend line." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-54.084%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Progression</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">See how each exercise is moving over time.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/exercise-library.jpeg" alt="Exercise library sorted A to Z, with the muscle group and equipment for each exercise." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-27.594%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Exercise library</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Browse A–Z, by muscle or by equipment.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/food-diary.jpeg" alt="Food diary with daily calorie goal and remaining calories, and breakfast and lunch entries." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-28.698%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Food diary</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Each meal with its calories and macros.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/micronutrients.jpeg" alt="Nutrient breakdown showing protein, carbs and fat progress, plus vitamins and other nutrients against daily targets." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-48.565%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Micronutrients</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Vitamins, fibre and more, against your targets.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/label-scan.jpeg" alt="Label scan result showing the product name, brand and per-serving calories, protein, carbs and fat read from a photo." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-103.753%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Label scanning</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Photograph a nutrition label and check the values.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/body-tracker.jpeg" alt="Body tracker showing a 90-day weight chart with start, lowest and average weight." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-46.358%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Body tracker</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Weight trends over 7 days, 90 days or all time.</span></figcaption>
+      </figure>
+      <figure style="flex:none;width:min(340px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;width:100%;aspect-ratio:906/1000;border-radius:32px;overflow:hidden;background:#F2F2F2;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(0,0,0,.45);padding:clamp(12px,2.4vw,18px)">
+          <div style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:18px"><img src="assets/screens/muscle-radar.jpeg" alt="Radar chart of training sets by muscle group, with workout count, total kilograms lifted and training time." loading="lazy" style="position:absolute;top:0;left:-2.208%;width:104.415%;max-width:none;height:auto;margin-top:-52.980%;display:block"></div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span style="font-weight:600;font-size:18px;letter-spacing:-0.01em">Muscle activity</span><span style="font-size:15px;color:var(--muted);text-wrap:pretty">Which muscle groups you train most.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="privacy" data-screen-label="Privacy" aria-labelledby="privacy-title" style="max-width:1160px;margin:0 auto;padding:clamp(40px,7vw,80px) clamp(20px,5vw,40px)">
+    <div style="background:#0C3569;color:#F2F2F2;border-radius:clamp(28px,4vw,40px);padding:clamp(28px,6vw,72px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(36px,5vw,64px);overflow:hidden">
+      <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <span style="width:60px;height:60px;border-radius:20px;background:#1B6BCD;color:#FFFFFF;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:32px;font-variation-settings:'FILL' 1">lock</span></span>
+        <h2 id="privacy-title" style="font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Your data stays on your phone.</h2>
+        <p style="font-size:clamp(17px,2vw,19px);color:#C9D6EA;max-width:46ch;text-wrap:pretty">Everything you log in Refine is stored locally on your device. Nothing is uploaded unless you turn on sync.</p>
+        <p style="font-size:clamp(17px,2vw,19px);color:#C9D6EA;max-width:46ch;text-wrap:pretty">By default, the only thing that leaves your phone is the details you sign up with.</p>
+        <a href="privacy.html" style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;color:#3DB5F5;font-weight:600;text-decoration:none;min-height:44px" style-hover="color:#FFFFFF">Read the privacy policy<span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+      </div>
+      <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <h3 style="display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:#3DB5F5">smartphone</span>Stays on your phone</h3>
+          <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px">
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Workouts</li>
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Exercise history</li>
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Food diary</li>
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Saved meals</li>
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Supplements</li>
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Weight</li>
+            <li style="padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:15px">Measurements</li>
+          </ul>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:8px 24px;display:flex;flex-direction:column">
+          <h3 style="display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600;padding:16px 0 8px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;color:#3DB5F5">cloud_upload</span>Leaves your phone</h3>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:16px">Sign-up details</span>
+            <span style="padding:4px 12px;border-radius:999px;background:#DFD8F7;color:#0C3569;font-size:14px;font-weight:600">By default</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:14px 0 16px">
+            <span style="font-size:16px">Everything you log</span>
+            <span style="padding:4px 12px;border-radius:999px;background:rgba(61,181,245,.16);color:#BFE6FB;font-size:14px;font-weight:600">Only if you turn on sync</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="indie" data-screen-label="Built in public" aria-labelledby="indie-title" style="max-width:1160px;margin:0 auto;padding:clamp(56px,9vw,112px) clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,80px)">
+    <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">Independent</p>
+      <h2 id="indie-title" style="font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Independent, and shaped by feedback.</h2>
+      <p style="font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:50ch;text-wrap:pretty">Refine is an independent app.</p>
+      <p style="font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:50ch;text-wrap:pretty">Bug reports, feature requests and honest opinions from people using Refine decide what gets built next.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <a href="support.html" style="display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 22px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF">Send feedback<span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">arrow_forward</span></a>
+      </div>
+    </div>
+    <dl style="flex:1 1 360px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:8px clamp(20px,3vw,28px)">
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)"><dt style="color:var(--muted)">Developer</dt><dd style="font-weight:600;text-align:right">Independent</dd></div>
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)"><dt style="color:var(--muted)">Platform</dt><dd style="font-weight:600;text-align:right">iPhone · Android planned</dd></div>
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)"><dt style="color:var(--muted)">Status</dt><dd style="font-weight:600;text-align:right">On the App Store</dd></div>
+      <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0"><dt style="color:var(--muted)">Price</dt><dd style="font-weight:600;text-align:right">Free</dd></div>
+    </dl>
+  </section>
+
+  <section id="faq" data-screen-label="FAQ" aria-labelledby="faq-title" style="max-width:1160px;margin:0 auto;padding:clamp(56px,9vw,112px) clamp(20px,5vw,40px);display:flex;flex-wrap:wrap;gap:clamp(32px,6vw,80px)">
+    <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:20px">
+      <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">FAQ</p>
+      <h2 id="faq-title" style="font-size:clamp(32px,5vw,52px);line-height:1.06;letter-spacing:-0.03em;font-weight:600">Questions.</h2>
+      <p style="color:var(--muted)">Something else? <a href="support.html">Get in touch</a>.</p>
+    </div>
+    <div style="flex:2 1 480px;min-width:0;border-top:1px solid var(--line)">
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq1 }}" aria-expanded="{{ q1 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Is it free?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi1 }}</span></span></button></h3>
+        <sc-if value="{{ q1 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">Yes. Refine is free to download and use.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq2 }}" aria-expanded="{{ q2 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Is it on Android?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi2 }}</span></span></button></h3>
+        <sc-if value="{{ q2 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">Not yet. Android is planned. For now, Refine is iPhone only.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq3 }}" aria-expanded="{{ q3 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Where is my data stored?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi3 }}</span></span></button></h3>
+        <sc-if value="{{ q3 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">On your phone. Everything you log stays on your device unless you turn on sync. Your sign-up details are the only thing that leaves it by default. The <a href="privacy.html">privacy policy</a> has the details.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq4 }}" aria-expanded="{{ q4 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Do I need an account?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi4 }}</span></span></button></h3>
+        <sc-if value="{{ q4 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">Yes, you sign up when you first open the app. Your sign-up details are stored with the account. Everything else stays on your phone unless you turn on sync.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq5 }}" aria-expanded="{{ q5 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">How do I give feedback?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi5 }}</span></span></button></h3>
+        <sc-if value="{{ q5 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">Use the feedback option inside the app, or email <a href="{{ mailto }}">{{ supportEmail }}</a>. Every message gets read.</p></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Final CTA" aria-labelledby="cta-title" style="max-width:1160px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(20px,5vw,40px) clamp(64px,10vw,120px)">
+    <div style="position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:clamp(28px,4vw,40px);padding:clamp(48px,8vw,96px) clamp(24px,5vw,64px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+      <div aria-hidden="true" style="position:absolute;left:50%;bottom:-60%;width:120%;height:100%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(27,107,205,.22),transparent);pointer-events:none"></div>
+      <h2 id="cta-title" style="position:relative;font-size:clamp(36px,6vw,64px);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Get Refine.</h2>
+      <p style="position:relative;font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:44ch;text-wrap:pretty">Free on the App Store for iPhone. Android is planned.</p>
+      <div style="position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px">
+        <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:17px;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF">Download on the App Store<span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">arrow_outward</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--line)">
+  <div style="max-width:1160px;margin:0 auto;padding:40px clamp(20px,5vw,40px) 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:20px;font-weight:600;letter-spacing:-0.02em">Refine</span>
+      <span style="font-size:14px;color:var(--muted)">Training and nutrition, in one app.</span>
+    </div>
+    <nav aria-label="Footer">
+      <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 24px">
+        <li><a href="privacy.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--text);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Privacy Policy</a></li>
+        <li><a href="support.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--text);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Support / Contact</a></li>
+      </ul>
+    </nav>
+    <p style="font-size:14px;color:var(--muted)">© 2026 Refine</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;appStoreUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://apps.apple.com/gb/app/refined/id6746036339&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;supportEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;support@refinemobile.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: window.innerWidth < 880, menuOpen: false, theme: 'dark', faq: 0 };
+  trackRef = React.createRef();
+  componentDidMount() {
+    let t = 'dark';
+    try { t = localStorage.getItem('refine-theme') === 'light' ? 'light' : 'dark'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', t);
+    this.mq = window.matchMedia('(max-width: 879px)');
+    this.onMq = () => this.setState(s => ({ narrow: this.mq.matches, menuOpen: this.mq.matches && s.menuOpen }));
+    this.mq.addEventListener('change', this.onMq);
+    this.setState({ theme: t, narrow: this.mq.matches });
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener('change', this.onMq); }
+  toggleTheme = () => {
+    const t = this.state.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('refine-theme', t); } catch (e) {}
+    this.setState({ theme: t });
+  };
+  scrollTrack(dir) {
+    const el = this.trackRef.current;
+    if (!el) return;
+    const item = el.querySelector('figure');
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 24;
+    const step = item ? item.getBoundingClientRect().width + gap : 280;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const max = el.scrollWidth - el.clientWidth;
+    const target = Math.max(0, Math.min(max, el.scrollLeft + dir * step));
+    const start = el.scrollLeft;
+    el.scrollTo({ left: target, behavior: reduce ? 'auto' : 'smooth' });
+    clearTimeout(this.scrollT);
+    this.scrollT = setTimeout(() => { if (el.scrollLeft === start && target !== start) el.scrollLeft = target; }, 350);
+  }
+  renderVals() {
+    const p = this.props, s = this.state, light = s.theme === 'light';
+    const email = p.supportEmail ?? 'support@refinemobile.com';
+    const v = {
+      appStoreUrl: p.appStoreUrl ?? 'https://apps.apple.com/gb/app/refined/id6746036339',
+      supportEmail: email,
+      mailto: 'mailto:' + email,
+      wide: !s.narrow,
+      narrow: s.narrow,
+      menuOpen: s.menuOpen,
+      menuOpenNarrow: s.narrow && s.menuOpen,
+      menuIcon: s.menuOpen ? 'close' : 'menu',
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      themeIcon: light ? 'dark_mode' : 'light_mode',
+      themeLabel: light ? 'Switch to dark theme' : 'Switch to light theme',
+      toggleTheme: this.toggleTheme,
+      trackRef: this.trackRef,
+      prev: () => this.scrollTrack(-1),
+      next: () => this.scrollTrack(1)
+    };
+    for (let i = 1; i <= 5; i++) {
+      const open = s.faq === i;
+      v['q' + i] = open;
+      v['qi' + i] = open ? 'remove' : 'add';
+      v['tq' + i] = () => this.setState(st => ({ faq: st.faq === i ? 0 : i }));
+    }
+    return v;
+  }
+}
+</script>
+</body>
+</html>

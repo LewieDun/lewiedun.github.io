@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1B6BCD"/><text x="50" y="66" font-family="sans-serif" font-size="46" font-weight="600" fill="#fff" text-anchor="middle">R</text></svg></template>
+<x-dc>
+<helmet>
+<title>Support – Refine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&amp;display=block" rel="stylesheet">
+<script>try{if(localStorage.getItem('refine-theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}</script>
+<style>
+html{--bg:#17171A;--surface:#222228;--surface-2:#2B2B33;--line:rgba(255,255,255,.09);--text:#F2F2F2;--muted:#ABABB5;--accent:#3DB5F5;--lav:#9880E5;--chip-blue:rgba(61,181,245,.12);--chip-lav:rgba(152,128,229,.16);--nav:rgba(23,23,26,.8);color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:80px}
+html[data-theme="light"]{--bg:#F2F2F2;--surface:#FFFFFF;--surface-2:#E8E8ED;--line:rgba(23,23,26,.1);--text:#17171A;--muted:#55555F;--accent:#1B6BCD;--lav:#5A3CB8;--chip-blue:#DCE8F8;--chip-lav:#DFD8F7;--nav:rgba(242,242,242,.82);color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+html,body,#dc-root,#dc-root > .sc-host{height:auto;min-height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Aptos,"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p{margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<a href="#main" style="position:fixed;left:16px;top:-80px;z-index:100;padding:12px 18px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;text-decoration:none" style-focus="top:12px">Skip to content</a>
+<header style="position:sticky;top:0;z-index:50;background:var(--nav);-webkit-backdrop-filter:saturate(1.5) blur(18px);backdrop-filter:saturate(1.5) blur(18px);border-bottom:1px solid var(--line)">
+  <nav aria-label="Main" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,40px);height:64px;display:flex;align-items:center;gap:28px">
+    <a href="index.html" aria-label="Refine home" style="display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none">
+      <span style="font-size:21px;font-weight:600;letter-spacing:-0.02em">Refine</span>
+    </a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;gap:2px">
+        <li><a href="index.html#features" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Features</a></li>
+        <li><a href="index.html#privacy" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Privacy</a></li>
+        <li><a href="index.html#faq" style="display:block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">FAQ</a></li>
+        <li><a href="support.html" aria-current="page" style="display:block;padding:8px 12px;border-radius:999px;color:var(--text);background:var(--surface);text-decoration:none;font-size:15px" style-hover="color:var(--text);background:var(--surface)">Support</a></li>
+      </ul>
+    </sc-if>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+      <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeLabel }}" title="{{ themeLabel }}" style="width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0" style-hover="background:var(--surface)"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:21px">{{ themeIcon }}</span></button>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:15px;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF">Get the app</a>
+      </sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-controls="mobile-menu" aria-label="{{ menuLabel }}" style="width:44px;height:44px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">{{ menuIcon }}</span></button>
+      </sc-if>
+    </div>
+  </nav>
+  <sc-if value="{{ menuOpenNarrow }}" hint-placeholder-val="{{ false }}">
+    <div id="mobile-menu" style="border-top:1px solid var(--line);padding:8px clamp(20px,5vw,40px) 20px;display:flex;flex-direction:column">
+      <a href="index.html#features" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">Features</a>
+      <a href="index.html#privacy" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">Privacy</a>
+      <a href="index.html#faq" style="display:flex;align-items:center;min-height:52px;color:var(--text);text-decoration:none;font-size:19px;border-bottom:1px solid var(--line)">FAQ</a>
+      <a href="support.html" aria-current="page" style="display:flex;align-items:center;min-height:52px;color:var(--accent);text-decoration:none;font-size:19px">Support</a>
+      <a href="{{ appStoreUrl }}" target="_blank" rel="noopener" style="margin-top:12px;display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;font-size:17px;text-decoration:none">Download on the App Store</a>
+    </div>
+  </sc-if>
+</header>
+
+<main id="main" data-screen-label="Support" style="max-width:1160px;margin:0 auto;padding:clamp(40px,8vw,88px) clamp(20px,5vw,40px) clamp(64px,10vw,120px);display:flex;flex-direction:column;gap:clamp(56px,8vw,96px)">
+  <div style="display:flex;flex-direction:column;gap:clamp(28px,4vw,40px)">
+    <div style="display:flex;flex-direction:column;gap:16px;max-width:640px">
+      <p style="align-self:flex-start;padding:6px 14px;border-radius:999px;background:var(--chip-lav);color:var(--lav);font-size:14px;font-weight:600">Support</p>
+      <h1 style="font-size:clamp(40px,6.5vw,68px);line-height:1.03;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">How can we help?</h1>
+      <p style="font-size:clamp(17px,2vw,19px);color:var(--muted);text-wrap:pretty">Questions, bugs or ideas are all welcome. Get in touch and we'll get back to you.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px">
+      <section aria-labelledby="email-title" style="background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:20px">
+        <span style="width:52px;height:52px;border-radius:16px;background:var(--chip-blue);color:var(--accent);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:28px">mail</span></span>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <h2 id="email-title" style="font-size:24px;font-weight:600;letter-spacing:-0.02em">Email</h2>
+          <p style="color:var(--muted)">The best way to reach us for anything account related or longer questions.</p>
+        </div>
+        <a href="{{ mailto }}" style="font-size:clamp(18px,2.4vw,22px);font-weight:600;word-break:break-all;text-decoration:none" style-hover="text-decoration:underline">{{ supportEmail }}</a>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:auto">
+          <a href="{{ mailto }}" style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;background:#1B6BCD;color:#FFFFFF;font-weight:600;text-decoration:none" style-hover="background:#10498F;color:#FFFFFF"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">send</span>Send an email</a>
+          <button type="button" onClick="{{ copyEmail }}" style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);font-family:inherit;font-size:16px;font-weight:600;cursor:pointer" style-hover="background:var(--surface-2)"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">{{ copyIcon }}</span><span aria-live="polite">{{ copyLabel }}</span></button>
+        </div>
+      </section>
+      <section aria-labelledby="inapp-title" style="background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,3vw,32px);display:flex;flex-direction:column;gap:20px">
+        <span style="width:52px;height:52px;border-radius:16px;background:var(--chip-lav);color:var(--lav);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:28px">chat_bubble</span></span>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <h2 id="inapp-title" style="font-size:24px;font-weight:600;letter-spacing:-0.02em">Feedback in the app</h2>
+          <p style="color:var(--muted);text-wrap:pretty">There's also a feedback option inside Refine. It's handy for reporting a bug right when it happens.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section aria-labelledby="sfaq-title" style="display:flex;flex-wrap:wrap;gap:clamp(32px,6vw,80px)">
+    <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:16px">
+      <h2 id="sfaq-title" style="font-size:clamp(30px,4.5vw,44px);line-height:1.08;letter-spacing:-0.03em;font-weight:600">Common questions</h2>
+      <p style="color:var(--muted)">More on the <a href="index.html#faq">home page</a>.</p>
+    </div>
+    <div style="flex:2 1 480px;min-width:0;border-top:1px solid var(--line)">
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq1 }}" aria-expanded="{{ q1 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Where can I download Refine?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi1 }}</span></span></button></h3>
+        <sc-if value="{{ q1 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">Refine is on the <a href="{{ appStoreUrl }}" target="_blank" rel="noopener">App Store</a> for iPhone.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq2 }}" aria-expanded="{{ q2 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">What should I put in a bug report?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi2 }}</span></span></button></h3>
+        <sc-if value="{{ q2 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">What you were doing, what you expected and what happened instead. Your iPhone model, iOS version and a screenshot help too.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq3 }}" aria-expanded="{{ q3 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Where is my data stored?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi3 }}</span></span></button></h3>
+        <sc-if value="{{ q3 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">On your phone. Nothing leaves your device unless you turn on sync, apart from your sign-up details. See the <a href="privacy.html">privacy policy</a>.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq4 }}" aria-expanded="{{ q4 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">How do I delete my account?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi4 }}</span></span></button></h3>
+        <sc-if value="{{ q4 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">See <a href="privacy.html#deleting-your-account">Deleting your account</a> in the privacy policy, or email us and we'll take care of it.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--line)">
+        <h3 style="font-size:inherit;font-weight:inherit"><button type="button" onClick="{{ tq5 }}" aria-expanded="{{ q5 }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;background:none;border:0;color:var(--text);font-family:inherit;font-size:clamp(18px,2vw,20px);font-weight:600;text-align:left;cursor:pointer">Is Refine on Android?<span style="flex:none;width:36px;height:36px;border-radius:999px;background:var(--surface);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">{{ qi5 }}</span></span></button></h3>
+        <sc-if value="{{ q5 }}" hint-placeholder-val="{{ false }}"><p style="padding:0 52px 24px 0;color:var(--muted);text-wrap:pretty">Not yet. Android is planned. For now, Refine is iPhone only.</p></sc-if>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--line)">
+  <div style="max-width:1160px;margin:0 auto;padding:40px clamp(20px,5vw,40px) 48px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 40px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:20px;font-weight:600;letter-spacing:-0.02em">Refine</span>
+      <span style="font-size:14px;color:var(--muted)">Training and nutrition, in one app.</span>
+    </div>
+    <nav aria-label="Footer">
+      <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 24px">
+        <li><a href="privacy.html" style="display:inline-flex;align-items:center;min-height:44px;color:var(--text);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Privacy Policy</a></li>
+        <li><a href="support.html" aria-current="page" style="display:inline-flex;align-items:center;min-height:44px;color:var(--accent);text-decoration:none;font-size:15px" style-hover="color:var(--accent)">Support / Contact</a></li>
+      </ul>
+    </nav>
+    <p style="font-size:14px;color:var(--muted)">© 2026 Refine</p>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;appStoreUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://apps.apple.com/gb/app/refined/id6746036339&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;supportEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;support@refinemobile.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  state = { narrow: window.innerWidth < 880, menuOpen: false, theme: 'dark', faq: 0, copied: false };
+  componentDidMount() {
+    let t = 'dark';
+    try { t = localStorage.getItem('refine-theme') === 'light' ? 'light' : 'dark'; } catch (e) {}
+    document.documentElement.setAttribute('data-theme', t);
+    this.mq = window.matchMedia('(max-width: 879px)');
+    this.onMq = () => this.setState(s => ({ narrow: this.mq.matches, menuOpen: this.mq.matches && s.menuOpen }));
+    this.mq.addEventListener('change', this.onMq);
+    this.setState({ theme: t, narrow: this.mq.matches });
+  }
+  componentWillUnmount() { this.mq && this.mq.removeEventListener('change', this.onMq); clearTimeout(this.copyT); }
+  toggleTheme = () => {
+    const t = this.state.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('refine-theme', t); } catch (e) {}
+    this.setState({ theme: t });
+  };
+  renderVals() {
+    const p = this.props, s = this.state, light = s.theme === 'light';
+    const email = p.supportEmail ?? 'support@refinemobile.com';
+    const v = {
+      appStoreUrl: p.appStoreUrl ?? 'https://apps.apple.com/gb/app/refined/id6746036339',
+      supportEmail: email,
+      mailto: 'mailto:' + email,
+      wide: !s.narrow,
+      narrow: s.narrow,
+      menuOpen: s.menuOpen,
+      menuOpenNarrow: s.narrow && s.menuOpen,
+      menuIcon: s.menuOpen ? 'close' : 'menu',
+      menuLabel: s.menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      themeIcon: light ? 'dark_mode' : 'light_mode',
+      themeLabel: light ? 'Switch to dark theme' : 'Switch to light theme',
+      toggleTheme: this.toggleTheme,
+      copyIcon: s.copied ? 'check' : 'content_copy',
+      copyLabel: s.copied ? 'Copied' : 'Copy address',
+      copyEmail: () => {
+        const done = () => { this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 2000); };
+        if (navigator.clipboard) navigator.clipboard.writeText(email).then(done, () => {}); 
+      }
+    };
+    for (let i = 1; i <= 5; i++) {
+      const open = s.faq === i;
+      v['q' + i] = open;
+      v['qi' + i] = open ? 'remove' : 'add';
+      v['tq' + i] = () => this.setState(st => ({ faq: st.faq === i ? 0 : i }));
+    }
+    return v;
+  }
+}
+</script>
+</body>
+</html>
